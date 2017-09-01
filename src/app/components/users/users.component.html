@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-8">
+        <h2>Users</h2>
+        <app-user-item *ngFor="let user of users" [user]="user"></app-user-item>
+    </div>
+    <div class="col-md-4">
+        <h2>Quick Actions</h2>
+        <div class="card">
+            <a [routerLink]="['add']" class="btn btn-success"><i class="fa fa-user-plus"> Add User</i></a>
+        </div>
+    </div>
+</div>

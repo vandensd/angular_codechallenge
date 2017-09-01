@@ -1,0 +1,14 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <h3 class="card-title">
+      {{user.firstName}} {{user.lastName}}
+    </h3>
+    <div class="card-text">
+      {{user.department}}
+    </div>
+    <hr>
+    <a [routerLink]="['view', user.id]" class="card-link">View</a>
+    <a [routerLink]="['edit', user.id]" class="card-link">Edit</a>
+  </div>
+  <div class="card-footer text-muted">EmployeeId: {{user.employeeId}}</div>
+</div>
