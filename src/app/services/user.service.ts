@@ -8,7 +8,7 @@ import { User } from '../models/user';
 
 @Injectable()
 export class UserService {
-  private usersUrl = 'http://localhost:54044/api/user/';
+  private usersUrl = 'http://localhost:5000/api/user/';
   private userAdded = new Subject();
 
   constructor(private http: Http) { }

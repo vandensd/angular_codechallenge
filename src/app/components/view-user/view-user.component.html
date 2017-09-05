@@ -1,4 +1,4 @@
-<h2>Test</h2>
+<h2>User Details</h2>
 <div *ngIf="user != undefined">
-  <app-user-item [readOnly]="true" [user]="user"></app-user-item>
+  <app-user-item [readOnly]="true" [user]="user" (onDelete)="onDelete()"></app-user-item>
 </div>

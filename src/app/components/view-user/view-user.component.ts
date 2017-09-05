@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { NotificationsService } from 'angular2-notifications';
+
 import { UserService } from '../../services/user.service';
 
 import { User } from '../../models/user';
@@ -25,7 +27,8 @@ export class ViewUserComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private notifications: NotificationsService
   ) { }
 
   ngOnInit() {
@@ -36,6 +39,16 @@ export class ViewUserComponent implements OnInit {
 
         this.userService.getUser(this.selectedId)
           .subscribe(user => this.user = user);
+      });
+  }
+
+  onDelete() {
+    // Call the api service method to delete (need to add yet)
+    this.userService.deleteUser(this.user)
+      .subscribe(simpleResponse => {
+        if (simpleResponse.success) {
+          this.notifications.success('Success', 'User was removed successfully');
+        }
       });
   }
 

@@ -9,7 +9,7 @@
     <hr>
     <div class="clearfix">
       <div class="float-left">
-        <a *ngIf="!readOnly" [routerLink]="['view', user.id]" class="card-link">View</a>
+        <a *ngIf="!readOnly" [routerLink]="['/', 'users', 'view', user.id]" class="card-link">View</a>
         <a [routerLink]="['/', 'users', 'edit', user.id]" class="card-link">Edit</a>
       </div>
       <button class="btn btn-danger float-right" (click)="deleteUser()">Delete</button>
