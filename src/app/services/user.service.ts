@@ -33,4 +33,9 @@ export class UserService {
       .map(res => res.json());
   }
 
+  deleteUser(user: User): Observable<any> {
+    return this.http.get(this.usersUrl + "Delete/" + user.id)
+      .map(res => res.json());
+  }
+
 }

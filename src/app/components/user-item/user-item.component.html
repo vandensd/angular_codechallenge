@@ -7,8 +7,13 @@
       {{user.department}}
     </div>
     <hr>
-    <a [routerLink]="['view', user.id]" class="card-link">View</a>
-    <a [routerLink]="['edit', user.id]" class="card-link">Edit</a>
+    <div class="clearfix">
+      <div class="float-left">
+        <a *ngIf="!readOnly" [routerLink]="['view', user.id]" class="card-link">View</a>
+        <a [routerLink]="['/', 'users', 'edit', user.id]" class="card-link">Edit</a>
+      </div>
+      <button class="btn btn-danger float-right" (click)="deleteUser()">Delete</button>
+    </div>
   </div>
   <div class="card-footer text-muted">EmployeeId: {{user.employeeId}}</div>
 </div>

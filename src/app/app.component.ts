@@ -9,7 +9,7 @@ export class AppComponent {
 
   constructor() { }
 
-  public options = {
+  public notifyOptions = {
     position: ["bottom", "right"],
     timeOut: 3000,
     lastOnBottom: true,
