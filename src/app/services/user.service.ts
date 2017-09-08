@@ -4,11 +4,13 @@ import { Http } from '@angular/http';
 import {Observable, Subject } from 'rxjs';
 import 'rxjs/add/operator/map';
 
+import { environment } from '../../environments/environment';
+
 import { User } from '../models/user';
 
 @Injectable()
 export class UserService {
-  private usersUrl = 'http://localhost:5000/api/user/';
+  private usersUrl = environment.apiUrl;
   private userAdded = new Subject();
 
   constructor(private http: Http) { }
